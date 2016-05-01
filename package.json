@@ -1,0 +1,45 @@
+{
+  "name": "node-dispatcher-demo",
+  "version": "1.0.0",
+  "description": "Dispatcher pattern demo with Promises.",
+  "main": "dist/server.js",
+  "scripts": {
+    "clean": "rm -rf dist/",
+    "build": "mkdir -p dist/ && ./node_modules/.bin/babel src/ --out-dir dist/",
+    "dist": "npm run clean && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "DEBUG=node-dispatcher-demo:* node dist/server.js"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfellner/node-dispatcher-demo.git"
+  },
+  "author": "Maximilian Fellner <max.fellner@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mfellner/node-dispatcher-demo/issues"
+  },
+  "homepage": "https://github.com/mfellner/node-dispatcher-demo#readme",
+  "devDependencies": {
+    "babel-cli": "6.7.7",
+    "babel-core": "6.7.7",
+    "babel-preset-es2015-node6": "0.1.3",
+    "babel-preset-stage-3": "6.5.0"
+  },
+  "dependencies": {
+    "debug": "2.2.0",
+    "koa": "2.0.0",
+    "koa-bodyparser": "^3.0.0",
+    "koa-morgan": "^1.0.1",
+    "koa-router": "7.0.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015-node6",
+      "stage-3"
+    ]
+  }
+}
