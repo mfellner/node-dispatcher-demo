@@ -21,6 +21,7 @@ export async function dispatch(payload) {
     // > callback() without 'await': don't collect any results and return immediately
     const result = await Promise.all(registry[event].map(callback => callback(data)))
     log('collected %d result(s) for event "%s"', result.length, event)
+    return result
   } else {
     throw new Error(`No such event: "${event}"`)
   }
